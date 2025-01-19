@@ -25,7 +25,7 @@ function RegistrationForm() {
             <br/>
             <input type="submit" onClick={RegisterTheUser} value="Register"/>
         </form>
-        {age >= 18? <WelcomeMembers name="Mohan"/>: <WelcomeMembers name='Rohan'></WelcomeMembers>}
+        {age >= 18? <WelcomeMembers name="Mohan" age={age}/>: <WelcomeMembers name='Rohan' age={age}></WelcomeMembers>}
           
       </div>  
     );
