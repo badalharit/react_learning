@@ -1,0 +1,27 @@
+import React from "react";
+
+function RegistrationForm() {
+    function RegisterTheUser(e){
+        e.preventDefault(); // Do not reload the screen on submitting the Form
+        alert("Registration Successful!");
+    }
+    return(
+      <div>
+        <h1>Registration Form</h1>
+        <form>
+            <label>Username: </label>
+            <input type="text" name="username" required/>
+            <br/>
+            <label>Password: </label>
+            <input type="password" name="password" required/>
+            <br/>
+            <label>Confirm Password: </label>
+            <input type="password" name="confirm_password" required/>
+            <br/>
+            <input type="submit" onClick={RegisterTheUser} value="Register"/>
+        </form>
+      </div>  
+    );
+}
+
+export default RegistrationForm;

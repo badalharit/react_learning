@@ -6,17 +6,19 @@ import Home from './screens/Home';
 import About from './screens/About';
 import Contact from './screens/Contact';
 import WelcomeMembers from './screens/WelcomeMembers';
+import RegistrationForm from './screens/RegistrationForm';
 // import { Route, Switch, Link, BrowserRouter as Router} from "react-router-dom";
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <WelcomeMembers name='Salaar'/>
+    {/* <WelcomeMembers name='Salaar'/>
     <WelcomeMembers name='Rocky'/>
     <LandingPage />
     <Home/>
     <Contact></Contact>
-    <About></About>
+    <About></About> */}
+    <RegistrationForm></RegistrationForm>
   </React.StrictMode>
 );
 
