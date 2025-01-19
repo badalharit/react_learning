@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
+// import './index.css';
+// import App from './App';
 import reportWebVitals from './reportWebVitals';
 import LandingPage from './LandingPage';
 // import './LandingPage.css';
@@ -9,8 +9,8 @@ import LandingPage from './LandingPage';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <App />
-    {/* <LandingPage /> */}
+    {/* <App /> */}
+    <LandingPage />
   </React.StrictMode>
 );
 
