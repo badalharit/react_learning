@@ -21,13 +21,13 @@ const UserDeatils = () => {
   return (
     <div>
         {user_data.map(
-            ({name,age,city}) => {
-                return (
+            ({name,age,city}) =>  (
                     <div>
-                        Hi <h2>{name}</h2>. I know, your age is <p>{age}</p> years. And you live in <p>{city}</p>
+                        <ul>
+                         <li>Hi {name}. I know, your age is {age} years. And you live in {city}.<br/></li>
+                        </ul>
                     </div>
                 )
-            }
         )}
     </div>
   )
