@@ -1,4 +1,5 @@
 import React from 'react'
+import Usercard from './Usercard';
 
 const UserDeatils = () => {
     let user_data = [
@@ -22,12 +23,8 @@ const UserDeatils = () => {
     <div>
         {user_data.map(
             ({name,age,city}) =>  (
-                    <div>
-                        <ul>
-                         <li>Hi {name}. I know, your age is {age} years. And you live in {city}.<br/></li>
-                        </ul>
-                    </div>
-                )
+                   <Usercard name={name} age={age} city={city}/>
+            )
         )}
     </div>
   )
