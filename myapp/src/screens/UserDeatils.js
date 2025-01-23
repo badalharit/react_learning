@@ -1,24 +1,8 @@
 import React from 'react'
 import Usercard from './Usercard';
+import user_data from '../utils/userdata';
 
 const UserDeatils = () => {
-    let user_data = [
-        {
-            name: "John",
-            age: 30,
-            city: "New York"
-        },
-        {
-            name: "Alice",
-            age: 25,
-            city: "Los Angeles"
-        },
-        {
-            name: "Bob",
-            age: 35,
-            city: "Chicago"
-        }
-        ];
   return (
     <div>
         {user_data.map(
