@@ -6,7 +6,7 @@ function RegistrationForm() {
   /**
    * Enabling Hooks
    */
-      const [name,setName] = useState();
+      const [name,setName] = useState(); // It manage the states
       const [email,setEmail] = useState(); 
       const [password,setPassword] = useState();
       const [cnfrmPassword,confirmPassword] = useState();
