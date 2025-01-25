@@ -19,7 +19,7 @@ root.render(
     <Home/>
     <Contact></Contact>
     <About></About> */}
-    <RegistrationForm></RegistrationForm>
+    <RegistrationForm/>
     {/* <UserDeatils></UserDeatils> */}
   </React.StrictMode>
 );
