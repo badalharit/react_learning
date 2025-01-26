@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, {useEffect, useState} from "react";
 // import WelcomeMembers from "./WelcomeMembers";
 import '../utils/RegistrationForm.css'
 
@@ -6,10 +6,17 @@ function RegistrationForm() {
   /**
    * Enabling Hooks
    */
-      const [name,setName] = useState(); // It manage the states
+      const [name,setName] = useState(); // Hook: It manage the states
       const [email,setEmail] = useState(); 
       const [password,setPassword] = useState();
       const [cnfrmPassword,confirmPassword] = useState();
+      const [country,setCountry] = useState();
+
+      useEffect( // Hook: It runs on Screen Render
+        () => {setCountry('INDIA')}, // Callback Function
+        [] // Dependency Array - We provide this with a state variable here or any other variable that are chenging in nature. It hits a re-render
+      )
+
 
   // let age = 17;
     function RegisterTheUser(e){
@@ -17,7 +24,7 @@ function RegistrationForm() {
         alert("Registration Successful!");
     }
 
-    console.log(name+':'+email+':'+password+':'+cnfrmPassword)
+    console.log(name+':'+email+':'+password+':'+cnfrmPassword+':'+country)
     return(
       <div className="form-container">
         <h2>Registration Form</h2>
