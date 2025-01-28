@@ -11,12 +11,20 @@ function RegistrationForm() {
       const [password,setPassword] = useState();
       const [cnfrmPassword,confirmPassword] = useState();
       const [country,setCountry] = useState();
+      const [countries, setCountries] = useState([]);
+      const [countryCodes, setCountryCodes] = useState({});
+      const [phoneNumber, setPhoneNumber] = useState("");
 
-      useEffect( // Hook: It runs on Screen Render
-        () => {setCountry('INDIA')}, // Callback Function
-        [] // Dependency Array - We provide this with a state variable here or any other variable that are chenging in nature. It hits a re-render
-      )
-
+      useEffect(() => { // Hook: It runs on Screen Render
+        fetch("https://restcountries.com/v3.1/all") // Callback Function
+          .then(response => response.json())
+          .then(data => setCountries(data.map(country => country.name.common))); 
+      }, [] // Dependency Array - We provide this with a state variable here or any other variable that are changing in nature. It hits a re-render
+    );
+    
+    const handleCountryChange = (e) => {
+      setCountry(e.target.value);
+    };
 
   // let age = 17;
     function RegisterTheUser(e){
@@ -57,6 +65,15 @@ function RegistrationForm() {
               onChange={(e) => confirmPassword(e.target.value)}            
             />
           </div>
+          <div className="form-group">
+          <label htmlFor="country">Country</label>
+          <select id="country" name="country" value={country} onChange={handleCountryChange}>
+            <option value="">Select a country</option>
+            {countries.map((country, index) => (
+              <option key={index} value={country}>{country}</option>
+            ))}
+          </select>
+        </div>
           <input type="submit" className="submit-btn" value="Register" />
         </form>
         {/* {age >= 18? <WelcomeMembers name="Mohan" age={age}/>: <WelcomeMembers name='Rohan' age={age}></WelcomeMembers>} */}
