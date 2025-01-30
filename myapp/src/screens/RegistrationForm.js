@@ -1,5 +1,4 @@
 import React, {useEffect, useState} from "react";
-// import WelcomeMembers from "./WelcomeMembers";
 import '../utils/RegistrationForm.css'
 
 function RegistrationForm() {
@@ -12,7 +11,7 @@ function RegistrationForm() {
       const [cnfrmPassword,confirmPassword] = useState();
       const [country,setCountry] = useState();
       const [countries, setCountries] = useState([]);
-      const [countryCodes, setCountryCodes] = useState({});
+      const [callingCode, setCallingCode] = useState();
       const [phoneNumber, setPhoneNumber] = useState("");
 
       useEffect(() => { // Hook: It runs on Screen Render
@@ -21,18 +20,30 @@ function RegistrationForm() {
           .then(data => setCountries(data.map(country => country.name.common))); 
       }, [] // Dependency Array - We provide this with a state variable here or any other variable that are changing in nature. It hits a re-render
     );
+
+      useEffect(() => {
+        if (country) {
+          fetch(`https://restcountries.com/v3.1/name/${country}?fields=name,idd`) // Callback Function
+            .then(response => response.json())
+            .then(data => setCallingCode(data[0].idd.root+data[0].idd.suffixes[0]+'-'))
+        }
+      }, [country])
+    
     
     const handleCountryChange = (e) => {
       setCountry(e.target.value);
     };
 
-  // let age = 17;
+    const handlePhoneNumberChange = (e) => {
+      setPhoneNumber(e.target.value);
+    };
+
     function RegisterTheUser(e){
         e.preventDefault(); // Do not reload the screen on submitting the Form
         alert("Registration Successful!");
     }
 
-    console.log(name+':'+email+':'+password+':'+cnfrmPassword+':'+country)
+    console.log(name+':'+email+':'+password+':'+cnfrmPassword+':'+country+':'+callingCode+phoneNumber)
     return(
       <div className="form-container">
         <h2>Registration Form</h2>
@@ -73,6 +84,16 @@ function RegistrationForm() {
               <option key={index} value={country}>{country}</option>
             ))}
           </select>
+        </div>
+        <div className="form-group">
+          <label htmlFor="phone_number">Phone Number</label>
+          <select className="country-code" disabled>
+            <option value={callingCode}>{callingCode} ({country})</option>
+          </select>
+          <input type="text" id="phone_number" name="phone_number" placeholder="Enter your phone number"
+            value={phoneNumber}
+            onChange={handlePhoneNumberChange}
+          />
         </div>
           <input type="submit" className="submit-btn" value="Register" />
         </form>
