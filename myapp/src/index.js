@@ -1,12 +1,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import reportWebVitals from './reportWebVitals';
+import FactorialCalculator from './screens/FactorialCalculator';
 // import LandingPage from './LandingPage';
 // import Home from './screens/Home';
 // import About from './screens/About';
 // import Contact from './screens/Contact';
 // import WelcomeMembers from './screens/WelcomeMembers';
-import RegistrationForm from './screens/RegistrationForm';
+// import RegistrationForm from './screens/RegistrationForm';
 // import UserDeatils from './screens/UserDeatils';
 // import { Route, Switch, Link, BrowserRouter as Router} from "react-router-dom";
 
@@ -19,7 +20,8 @@ root.render(
     <Home/>
     <Contact></Contact>
     <About></About> */}
-    <RegistrationForm/>
+    {/* <RegistrationForm/> */}
+    <FactorialCalculator/>
     {/* <UserDeatils></UserDeatils> */}
   </React.StrictMode>
 );
