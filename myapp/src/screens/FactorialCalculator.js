@@ -1,4 +1,5 @@
 import React, { useState, useMemo } from 'react';
+import '../utils/FactorialCalculator.css'; // Import the CSS file
 
 /**
  * Component demonstrating useMemo for optimizing expensive calculations
@@ -11,7 +12,7 @@ import React, { useState, useMemo } from 'react';
 function FactorialCalculator() {
   // State for the input number whose factorial we want to calculate
   const [number, setNumber] = useState(1);
-  
+
   // Dummy counter state to demonstrate unnecessary re-renders
   const [counter, setCounter] = useState(0);
 
@@ -37,19 +38,18 @@ function FactorialCalculator() {
   }, [number]); // Dependency array - only track 'number'
 
   return (
-    <div style={{ padding: '20px', maxWidth: '600px', margin: '0 auto' }}>
+    <div className="factorial-calculator">
       <h2>useMemo Demonstration</h2>
-      
+
       {/* Number Input Section */}
-      <div style={{ marginBottom: '20px' }}>
+      <div className="input-section">
         <label>
-          Enter a number: 
+          Enter a number:
           <input
             type="number"
             value={number}
             onChange={(e) => setNumber(Number(e.target.value))}
             min="1"
-            style={{ marginLeft: '10px' }}
           />
         </label>
         <p>
@@ -58,26 +58,12 @@ function FactorialCalculator() {
       </div>
 
       {/* Dummy Counter Section */}
-      <div style={{ 
-        padding: '15px', 
-        backgroundColor: '#f0f0f0',
-        borderRadius: '8px'
-      }}>
+      <div className="counter-section">
         <p>This counter demonstrates unnecessary re-renders:</p>
-        <button 
-          onClick={() => setCounter(c => c + 1)}
-          style={{
-            padding: '8px 16px',
-            backgroundColor: '#007bff',
-            color: 'white',
-            border: 'none',
-            borderRadius: '4px',
-            cursor: 'pointer'
-          }}
-        >
+        <button onClick={() => setCounter(c => c + 1)}>
           Increment Counter: {counter}
         </button>
-        <p style={{ color: '#666', marginTop: '10px' }}>
+        <p className="hint">
           💡 Notice how updating the counter doesn't trigger factorial recalculation
         </p>
       </div>
