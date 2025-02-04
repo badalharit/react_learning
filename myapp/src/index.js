@@ -1,32 +1,65 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import reportWebVitals from './reportWebVitals';
-// import CallbackDemo from './screens/UseCallbackHook';
-// import FactorialCalculator from './screens/FactorialCalculator';
-// import LandingPage from './LandingPage';
-// import Home from './screens/Home';
-// import About from './screens/About';
-// import Contact from './screens/Contact';
-// import WelcomeMembers from './screens/WelcomeMembers';
-// import RegistrationForm from './screens/RegistrationForm';
-// import UserDeatils from './screens/UserDeatils';
-// import { Route, Switch, Link, BrowserRouter as Router} from "react-router-dom";
+import { createBrowserRouter,RouterProvider } from 'react-router-dom';
+import CallbackDemo from './screens/UseCallbackHook';
+import FactorialCalculator from './screens/FactorialCalculator';
+import LandingPage from './LandingPage';
+import Home from './screens/Home';
+import About from './screens/About';
+import Contact from './screens/Contact';
+import WelcomeMembers from './screens/WelcomeMembers';
+import RegistrationForm from './screens/RegistrationForm';
+import UserDeatils from './screens/UserDeatils';
 import App from './screens/CompleteReactHooks';
+
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <LandingPage/>
+  },
+  {
+    path: "/factorial",
+    element: <FactorialCalculator/>
+  },
+  {
+    path: "/CallbackDemo",
+    element: <CallbackDemo/>
+  },
+  {
+    path: "/Home",
+    element: <Home/>
+  },  
+  {
+    path: "/About",
+    element: <About/>
+  },  
+  {
+    path: "/Contact",
+    element: <Contact/>
+  },
+  {
+    path: "/WelcomeMembers",
+    element: <WelcomeMembers/>
+  },
+  {
+    path: "/RegistrationForm",
+    element: <RegistrationForm/>
+  },
+  {
+    path: "/UserDeatils",
+    element: <UserDeatils/>
+  },
+  {
+    path: "/ToDo",
+    element: <App/>
+  },
+]);
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    {/* <WelcomeMembers name='Salaar'/>
-    <WelcomeMembers name='Rocky'/>
-    <LandingPage />
-    <Home/>
-    <Contact></Contact>
-    <About></About> */}
-    {/* <RegistrationForm/> */}
-    {/* <FactorialCalculator/> */}
-    {/* <UserDeatils></UserDeatils> */}
-    {/* <CallbackDemo/> */}
-    <App/>
+    <RouterProvider router={router}/>
   </React.StrictMode>
 );
 
