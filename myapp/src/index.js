@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import reportWebVitals from './reportWebVitals';
-import CallbackDemo from './screens/UseCallbackHook';
+// import CallbackDemo from './screens/UseCallbackHook';
 // import FactorialCalculator from './screens/FactorialCalculator';
 // import LandingPage from './LandingPage';
 // import Home from './screens/Home';
