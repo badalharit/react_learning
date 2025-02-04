@@ -1,7 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import reportWebVitals from './reportWebVitals';
-import FactorialCalculator from './screens/FactorialCalculator';
+import CallbackDemo from './screens/UseCallbackHook';
+// import FactorialCalculator from './screens/FactorialCalculator';
 // import LandingPage from './LandingPage';
 // import Home from './screens/Home';
 // import About from './screens/About';
@@ -21,8 +22,9 @@ root.render(
     <Contact></Contact>
     <About></About> */}
     {/* <RegistrationForm/> */}
-    <FactorialCalculator/>
+    {/* <FactorialCalculator/> */}
     {/* <UserDeatils></UserDeatils> */}
+    <CallbackDemo/>
   </React.StrictMode>
 );
 
