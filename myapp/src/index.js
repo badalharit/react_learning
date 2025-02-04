@@ -11,6 +11,7 @@ import CallbackDemo from './screens/UseCallbackHook';
 // import RegistrationForm from './screens/RegistrationForm';
 // import UserDeatils from './screens/UserDeatils';
 // import { Route, Switch, Link, BrowserRouter as Router} from "react-router-dom";
+import App from './screens/CompleteReactHooks';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -24,7 +25,8 @@ root.render(
     {/* <RegistrationForm/> */}
     {/* <FactorialCalculator/> */}
     {/* <UserDeatils></UserDeatils> */}
-    <CallbackDemo/>
+    {/* <CallbackDemo/> */}
+    <App/>
   </React.StrictMode>
 );
 

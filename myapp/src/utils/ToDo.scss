@@ -1,0 +1,125 @@
+// Variables
+$primary-color: #007bff;
+$primary-hover: #0056b3;
+$warning-color: #ff9800;
+$warning-hover: #e68900;
+$dark-bg: #222;
+$light-bg: #f4f4f4;
+$text-dark: black;
+$text-light: white;
+$border-radius: 10px;
+
+// Base styles
+body {
+  font-family: Arial, sans-serif;
+  background: $light-bg;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+// App container
+.app {
+  width: 400px;
+  padding: 20px;
+  border-radius: $border-radius;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  background: white;
+
+  &.dark {
+    background: $dark-bg;
+    color: $text-light;
+  }
+}
+
+// Typography
+h2, h3 {
+  text-align: center;
+}
+
+// Input container
+.input-container {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 15px;
+}
+
+// Input field
+input {
+  flex: 1;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+// Buttons
+button {
+  padding: 8px 12px;
+  background: $primary-color;
+  border: none;
+  color: $text-light;
+  cursor: pointer;
+  border-radius: 5px;
+
+  &:hover {
+    background: $primary-hover;
+  }
+}
+
+// Task list
+.task-list {
+  list-style: none;
+  padding: 0;
+
+  li {
+    display: flex;
+    justify-content: space-between;
+    padding: 8px;
+    border-bottom: 1px solid #ddd;
+    align-items: center;
+    transition: background 0.3s ease;
+
+    &.done {
+      text-decoration: line-through;
+      color: gray;
+    }
+
+    &:hover {
+      background: #9c9999;
+    }
+  }
+}
+
+// Modal button
+.modal-btn {
+  width: 100%;
+  margin-top: 15px;
+  background: $warning-color;
+
+  &:hover {
+    background: $warning-hover;
+  }
+}
+
+// Modal styles
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .modal-content {
+    background: white;
+    padding: 20px;
+    border-radius: $border-radius;
+    text-align: center;
+    color: black;
+  }
+}
