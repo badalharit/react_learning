@@ -2,7 +2,7 @@ import React from 'react'
 import Usercard from './Usercard';
 import user_data from '../utils/userdata';
 
-const UserDeatils = () => {
+const UserDetails = () => {
   return (
     <div>
         {user_data.map(
@@ -14,4 +14,4 @@ const UserDeatils = () => {
   )
 }
 
-export default UserDeatils
+export default UserDetails
