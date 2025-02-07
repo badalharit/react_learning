@@ -36,7 +36,7 @@ const routes = [
   },
   {
     path: '/welcome-members',
-    element: <WelcomeMembers />,
+    element: <WelcomeMembers name='Badal Harit' age='29'/>,
   },
   {
     path: '/registration-form',
