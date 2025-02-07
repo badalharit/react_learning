@@ -113,7 +113,7 @@ const Modal = forwardRef(({ message }, ref) => {
 /**
  * Main To-Do Application Component
  */
-function TodoApp() {
+function TodoApplication() {
   // Use useState hook to store the task input field's value
   const [taskText, setTaskText] = useState("");
 
@@ -203,10 +203,10 @@ function TodoApp() {
 }
 
 // Wrap App with Theme Provider
-export default function App() {
+export default function ToDoApp() {
   return (
     <ThemeProvider>
-      <TodoApp />
+      <TodoApplication />
     </ThemeProvider>
   );
 }
