@@ -1,13 +1,13 @@
-import CallbackDemo from './screens/UseCallbackHook';
-import FactorialCalculator from './screens/FactorialCalculator';
+import CallbackDemo from './components/UseCallbackHook';
+import FactorialCalculator from './components/FactorialCalculator';
 import LandingPage from './LandingPage';
-import Home from './screens/Home';
-import About from './screens/About';
-import Contact from './screens/Contact';
-import WelcomeMembers from './screens/WelcomeMembers';
-import RegistrationForm from './screens/RegistrationForm';
-import UserDetails from './screens/UserDetails';
-import ToDoApp from './screens/CompleteReactHooks';
+import Home from './components/Home';
+import About from './components/About';
+import Contact from './components/Contact';
+import WelcomeMembers from './components/WelcomeMembers';
+import RegistrationForm from './components/RegistrationForm';
+import UserDetails from './components/UserDetails';
+import ToDoApp from './components/CompleteReactHooks';
 
 const routes = [
   {
