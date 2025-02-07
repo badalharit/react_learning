@@ -11,20 +11,24 @@ root.render(
       <div>
         <nav>
           <ul>
-            {routes.map((route, index) => (
-              <li key={index}>
-                <Link to={route.path}>
-                  {route.path === '/' ? 'Home' : route.path.slice(1)}
-                </Link>
-              </li>
-            ))}
+            {routes.map(
+                (route, index) => (
+                      <li key={index}>
+                        <Link to={route.path}>
+                          {route.path === '/' ? 'Home' : route.path.slice(1)}
+                        </Link>
+                      </li>
+              ))}
           </ul>
         </nav>
 
         <Routes>
-          {routes.map((route, index) => (
-            <Route key={index} path={route.path} element={route.element} />
-          ))}
+        {routes.map((route, index) => {
+            console.log(`Processing route ${index}: ${route.path}`);
+            return (
+              <Route key={index} path={route.path} element={route.element} />
+            );
+          })}
         </Routes>
       </div>
     </Router>
