@@ -1,26 +1,20 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import reportWebVitals from './reportWebVitals';
-import {BrowserRouter as Router, Link, Routes, Route} from 'react-router-dom';
+import {BrowserRouter, Link, Routes, Route} from 'react-router-dom';
 import routes from './routes';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <Router>
+    <BrowserRouter>
       <div>
-        <nav>
-          <ul>
-            {routes.map(
-                (route, index) => (
-                      <li key={index}>
-                        <Link to={route.path}>
-                          {route.path === '/' ? 'Home' : route.path.slice(1)}
-                        </Link>
-                      </li>
-              ))}
-          </ul>
-        </nav>
+          {routes.map(
+              (route) => (
+                  <Link to={route.path}>
+                    <button>{route.path === '/' ? 'Home' : route.path.slice(1)}</button>
+                  </Link>
+            ))}
 
         <Routes>
         {routes.map((route, index) => {
@@ -31,7 +25,7 @@ root.render(
           })}
         </Routes>
       </div>
-    </Router>
+    </BrowserRouter>
   </React.StrictMode>
 );
 
